@@ -1,0 +1,59 @@
+/*@media screen and (min-width: 1000px) {*/
+
+/* @media screen and (max-width:999px) {
+    
+} */
+
+h1 {
+    margin-top: 100px;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    background: url(board.jpg);
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+#board {
+    position: relative;
+    font-family: 'VT323', monospace;
+    width: 400px;
+    height: 300px;
+    margin: 0px auto;
+    background-color: antiquewhite;
+    padding: 20px;
+    border: 5px solid green;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px darkgreen;
+    overflow: auto;
+}
+
+#mode {
+    position: absolute;
+    background-color: antiquewhite;
+    width: inherit;
+    text-align: center;
+    z-index: 2;
+    display: none;
+}
+
+#symbol {
+    position: absolute;
+    width: inherit;
+    text-align: center;
+    background-color: antiquewhite;
+    z-index: 1;
+    display: none;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+#reset {
+    width: 400px;
+}

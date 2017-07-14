@@ -12,7 +12,7 @@ h1 {
 }
 
 body {
-    background: url(board.jpg);
+    background-image: url(board.jpg);
     padding: 0px;
     border: 0px;
     margin: 0px;
@@ -38,7 +38,12 @@ body {
     width: inherit;
     text-align: center;
     z-index: 2;
+    height: inherit;
     display: none;
+}
+
+h2 {
+    margin-top: 70px;
 }
 
 #symbol {
@@ -48,12 +53,31 @@ body {
     background-color: antiquewhite;
     z-index: 1;
     display: none;
+    height: inherit;
 }
 
 #game {
     margin-top: 20px;
+    overflow: auto;
 }
 
 #reset {
     width: 400px;
+}
+
+span {
+    float: left;
+    width: 32.9%;
+    text-align: center;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    font-size: 2em;
+}
+
+#one, #four, #seven, #two, #five, #eight {
+    border-right: 2px solid red;
+}
+
+#one, #two, #three, #four, #five, #six {
+    border-bottom: 2px solid red;
 }

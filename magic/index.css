@@ -5,7 +5,7 @@
 } */
 
 h1 {
-    margin-top: 100px;
+    margin-top: 10px;
     color: white;
     text-shadow: 0px 0px 10px black;
     font-family: 'Pacifico', cursive;
@@ -78,4 +78,58 @@ span {
 
 #one, #two, #three, #four, #five, #six {
     border-bottom: 2px solid red;
+}
+
+#score {
+    clear: both;
+    width: 410px;
+    margin: 0px auto;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: burlywood;
+    border-radius: 5px;
+    border: 2px dotted green;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+#s1 {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+#s2 {
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+#score > h3 {
+    margin-top: 0px;
+}
+
+#playing {
+    margin: 0px auto;
+    padding: 20px;
+    overflow: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    right: 0px;
+    top: 200px;
+}
+
+#pl1 {
+    margin-bottom: 20px;
+    background-color: aqua;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#pl2 {
+    margin-bottom: 20px;
+    background-color: aqua;
+    padding: 5px;
+    border-radius: 5px;
 }

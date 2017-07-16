@@ -13,6 +13,7 @@ var round = 0;
 var s1 = 0;
 var s2 = 0;
 
+//main calling function
 $(document).ready(function () {
     $('#pl1').hide();
     $('#pl2').hide();
@@ -32,6 +33,7 @@ $(document).ready(function () {
     });
 });
 
+//mode and symbol choice screens begin
 function chooseMode() {
     $('#single').click(function () {
         mode = 'single';
@@ -62,7 +64,9 @@ function chooseSymbol() {
         $('#symbol').hide();
     });
 }
+//mode and symbol choice screens end
 
+//multiplayer functions begin
 function nextRoundMulti() {
     round += 1;
     if (round % 2 !== 0) {
@@ -115,7 +119,9 @@ function resetMulti() {
     $('.sq, span').html('&nbsp;');
     nextRoundMulti();
 }
-    
+//multiplayer functions end
+
+//helper functions begin here
 function avail(reboard) {
   return reboard.filter(s => s != "X" && s != "O");
 }
@@ -168,3 +174,4 @@ function updateBoard(id, p) {
             break;
     }
 }
+//helper functions end here

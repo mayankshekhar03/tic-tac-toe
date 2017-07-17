@@ -22,9 +22,7 @@ $(document).ready(function () {
     chooseSymbol();
     $('#symbol').one('click', function(){
         if (mode === 'single'){
-            $('.sq').click(function(){
-                move(this, p1s);
-            });
+            nextRoundComp();  
         }else if (mode === 'multi') {
             nextRoundMulti();
         }else if (mode === ''){
@@ -179,6 +177,83 @@ function updateBoard(id, p) {
 //helper functions end here
 
 //ai for the withComputer mode begin
-function move(element, player) {
-    console.log(element.id, player);
+function nextRoundComp() {
+    round += 1;
+    if (round % 2 !== 0) {
+        $('#pl1').show();
+        $('#pl2').hide();
+        $('.sq').unbind().click(function() {  //this unbind function got this working
+            $(this).text(p1s);
+            updateBoard(this.id, p1s);
+            if(winning(board, p1s)) {
+                alert('You won!');
+                s1 += 10;
+                $('#s1').text('Player 1: ' + s1);
+                resetComp();
+            } else if(avail(board).length === 0) {
+                alert("It's a tie.");
+                resetComp();
+            }else{
+                nextRoundComp();
+            }
+        });
+    } else {
+        $('#pl2').show();
+        $('#pl1').hide();
+        var m = withComp();
+        $('#' + m).text(p2s);
+        updateBoard(m, p2s);
+        if(winning(board, p2s)) {
+            alert('Computer won!');
+            s2 += 10;
+            $('#s2').text('Player 2: ' + s2);
+            resetComp();
+        } else if(avail(board).length === 0) {
+            alert("It's a tie.");
+            resetComp();
+        } else {
+            nextRoundComp();
+        }
+    }
+    
+}
+
+function withComp() {
+    var reBoard = avail(board);
+    var move = reBoard[Math.floor(Math.random() * reBoard.length)];
+    switch(move) {
+        case 0:
+            return 'one';
+            break;
+        case 1:
+            return 'two';
+            break;
+        case 2:
+            return 'three';
+            break;
+        case 3:
+            return 'four';
+            break;
+        case 4:
+            return 'five';
+            break;
+        case 5:
+            return 'six';
+            break;
+        case 6:
+            return 'seven';
+            break;
+        case 7:
+            return 'eight';
+            break;
+        case 8:
+            return 'nine';
+            break;
+    }
+}
+
+function resetComp() {
+    board = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    $('.sq, span').html('&nbsp;');
+    nextRoundComp();
 }

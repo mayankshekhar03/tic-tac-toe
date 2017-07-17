@@ -107,8 +107,10 @@ function withFriend(player) {
             }, 500);
         }
     } else if (avail(board).length === 0) {
-        alert("It's a tie!");
-        resetMulti();
+        setTimeout(function(){
+            alert("It's a tie!");
+            resetMulti();
+        }, 500);
     } else {
         nextRoundMulti();
     }

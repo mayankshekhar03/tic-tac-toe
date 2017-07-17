@@ -1,13 +1,11 @@
 //mode
 var mode = '';
-//symbol
+/*symbol p1s is always the owner of the machine 
+and player 2 can be computer or player's friend */
 var p1s   = '';
 var p2s   = '';
 //current status of board
 var board = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-//with ai
-var p1 = 'P';
-var p2 = 'C';
 //score
 var round = 0;
 var s1 = 0;
@@ -24,7 +22,9 @@ $(document).ready(function () {
     chooseSymbol();
     $('#symbol').one('click', function(){
         if (mode === 'single'){
-            //withComp();
+            $('.sq').click(function(){
+                move(this, p1s);
+            });
         }else if (mode === 'multi') {
             nextRoundMulti();
         }else if (mode === ''){
@@ -177,3 +177,8 @@ function updateBoard(id, p) {
     }
 }
 //helper functions end here
+
+//ai for the withComputer mode begin
+function move(element, player) {
+    console.log(element.id, player);
+}

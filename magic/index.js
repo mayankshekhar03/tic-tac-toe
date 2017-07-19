@@ -25,8 +25,6 @@ $(document).ready(function () {
             nextRoundComp();  
         }else if (mode === 'multi') {
             nextRoundMulti();
-        }else if (mode === ''){
-            alert('Choose mode by refreshing the page');
         }
     });
 });
@@ -176,7 +174,7 @@ function updateBoard(id, p) {
 }
 //helper functions end here
 
-//ai for the withComputer mode begin
+//withComputer mode begin
 function nextRoundComp() {
     round += 1;
     if (round % 2 !== 0) {
@@ -257,3 +255,4 @@ function resetComp() {
     $('.sq, span').html('&nbsp;');
     nextRoundComp();
 }
+//withComp mode end
